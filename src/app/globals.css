@@ -1,26 +1,270 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  
+  /* Luxury Color System - Inspired by High-End Real Estate Agencies */
+  --background: #FFFCFC;
+  --foreground: #1A1A2E;
+  --card: #FFFFFF;
+  --card-foreground: #2A2A2A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A2E;
+  
+  /* Primary: Deep Navy - Sophistication & Trust */
+  --primary: #1A1A2E;
+  --primary-foreground: #FFFCFC;
+  
+  /* Secondary: Warm Charcoal - Elegance */
+  --secondary: #2A2A2A;
+  --secondary-foreground: #F9F5F0;
+  
+  /* Muted: Soft Cream - Clean & Spacious */
+  --muted: #F9F5F0;
+  --muted-foreground: #6B6B6B;
+  
+  /* Accent: Luxury Gold - Premium Feel */
+  --accent: #DBA800;
+  --accent-foreground: #1A1A2E;
+  
+  /* Luxury Teal: Modern & Calming */
+  --luxury-teal: #508594;
+  --luxury-teal-dark: #256464;
+  --luxury-teal-light: #7EADA9;
+  
+  /* Additional Luxury Colors */
+  --luxury-bronze: #CD7F32;
+  --luxury-cream: #E6DFC9;
+  --luxury-navy-light: #2D4059;
+  --luxury-charcoal-light: #4A4A4A;
+  
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  
+  /* UI Elements */
+  --border: #E5E7EB;
+  --input: #F3F4F6;
+  --ring: #DBA800;
+  
+  /* Shadows & Effects */
+  --shadow-luxury: 0 10px 25px -5px rgba(26, 26, 46, 0.1), 0 10px 10px -5px rgba(26, 26, 46, 0.04);
+  --shadow-luxury-hover: 0 25px 50px -12px rgba(26, 26, 46, 0.25);
+  --gradient-luxury: linear-gradient(135deg, #1A1A2E 0%, #2D4059 100%);
+  --gradient-gold: linear-gradient(135deg, #DBA800 0%, #CD7F32 100%);
+  
+  /* Chart colors updated for luxury theme */
+  --chart-1: #508594;
+  --chart-2: #DBA800;
+  --chart-3: #1A1A2E;
+  --chart-4: #CD7F32;
+  --chart-5: #7EADA9;
+  
+  /* Sidebar */
+  --sidebar: #F9F5F0;
+  --sidebar-foreground: #1A1A2E;
+  --sidebar-primary: #1A1A2E;
+  --sidebar-primary-foreground: #FFFCFC;
+  --sidebar-accent: #DBA800;
+  --sidebar-accent-foreground: #1A1A2E;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #DBA800;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variant-numeric: oldstyle-nums;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Luxury Typography */
+  .luxury-heading {
+    @apply font-bold tracking-tight;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  
+  .luxury-subheading {
+    @apply font-semibold tracking-wide;
+    letter-spacing: 0.025em;
+  }
+  
+  .luxury-text {
+    @apply leading-relaxed;
+    font-feature-settings: 'cv11';
+  }
+  
+  /* Luxury Buttons */
+  .btn-luxury-primary {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold;
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:shadow-lg transform hover:-translate-y-0.5;
+    background: var(--gradient-luxury);
+    box-shadow: var(--shadow-luxury);
+  }
+  
+  .btn-luxury-primary:hover {
+    box-shadow: var(--shadow-luxury-hover);
+  }
+  
+  .btn-luxury-secondary {
+    @apply bg-transparent border-2 border-accent text-accent px-8 py-4 rounded-lg font-semibold;
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:bg-accent hover:text-accent-foreground transform hover:-translate-y-0.5;
+    backdrop-filter: blur(10px);
+  }
+  
+  .btn-luxury-gold {
+    @apply text-primary px-8 py-4 rounded-lg font-semibold;
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:shadow-lg transform hover:-translate-y-0.5;
+    background: var(--gradient-gold);
+    box-shadow: var(--shadow-luxury);
+  }
+  
+  /* Luxury Cards */
+  .card-luxury {
+    @apply bg-card rounded-xl p-8 border border-border;
+    box-shadow: var(--shadow-luxury);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card-luxury:hover {
+    box-shadow: var(--shadow-luxury-hover);
+    transform: translateY(-4px);
+  }
+  
+  /* Luxury Backgrounds */
+  .bg-luxury-gradient {
+    background: var(--gradient-luxury);
+  }
+  
+  .bg-luxury-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-luxury-section {
+    @apply bg-muted/50;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Luxury Spacing */
+  .section-padding {
+    @apply py-24 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-luxury {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Luxury Effects */
+  .luxury-shadow {
+    box-shadow: var(--shadow-luxury);
+  }
+  
+  .luxury-shadow-hover {
+    box-shadow: var(--shadow-luxury-hover);
+  }
+  
+  /* Custom Color Classes */
+  .text-luxury-teal {
+    color: var(--luxury-teal);
+  }
+  
+  .text-luxury-gold {
+    color: var(--accent);
+  }
+  
+  .bg-luxury-teal {
+    background-color: var(--luxury-teal);
+  }
+  
+  .bg-luxury-navy {
+    background-color: var(--primary);
+  }
+  
+  .border-luxury-gold {
+    border-color: var(--accent);
+  }
 }
