@@ -41,13 +41,13 @@ export default function ContactSection() {
       <div className="container-luxury relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="luxury-heading text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
+          <h2 className="luxury-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6">
             {t.contact.title}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-300">
               {t.contact.subtitle}
             </span>
           </h2>
-          <p className="luxury-text text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="luxury-text text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             {t.contact.description}
           </p>
         </div>
@@ -170,7 +170,7 @@ export default function ContactSection() {
                   </div>
                   <div className="flex-1">
                     <h4 className="luxury-subheading text-lg text-card-foreground mb-2">{t.contact.info.email}</h4>
-                    <div className="luxury-text text-muted-foreground">info.kuhne.service@gmail.com</div>
+                    <div className="luxury-text text-muted-foreground word-break">info.kuhne.service@gmail.com</div>
                   </div>
                 </div>
 

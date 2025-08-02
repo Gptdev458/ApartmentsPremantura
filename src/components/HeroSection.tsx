@@ -34,7 +34,7 @@ export default function HeroSection() {
       <div className="relative z-10 container-luxury text-center">
         <div className="max-w-5xl mx-auto">
           {/* Main Headline */}
-          <h1 className="luxury-heading text-5xl sm:text-6xl lg:text-7xl text-white mb-8 leading-tight">
+          <h1 className="luxury-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 sm:mb-8 leading-tight">
             {t.hero.title}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-300">
               {t.hero.subtitle}
@@ -42,7 +42,7 @@ export default function HeroSection() {
           </h1>
           
           {/* Subheading */}
-          <p className="luxury-text text-xl sm:text-2xl lg:text-3xl text-gray-100 mb-4 max-w-4xl mx-auto font-light">
+          <p className="luxury-text text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-100 mb-4 max-w-4xl mx-auto font-light">
             {t.hero.description}
           </p>
           

@@ -155,24 +155,45 @@
     @apply bg-background text-foreground;
     font-feature-settings: 'cv11', 'ss01';
     font-variant-numeric: oldstyle-nums;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Improved word breaking for long text */
+  .word-break {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 }
 
 @layer utilities {
-  /* Luxury Typography */
+  /* Luxury Typography - Enhanced Mobile Responsiveness */
   .luxury-heading {
     @apply font-bold tracking-tight;
     font-feature-settings: 'cv11', 'ss01';
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   
   .luxury-subheading {
     @apply font-semibold tracking-wide;
     letter-spacing: 0.025em;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   
   .luxury-text {
     @apply leading-relaxed;
     font-feature-settings: 'cv11';
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Mobile-specific typography improvements */
+  @screen sm {
+    .luxury-heading {
+      line-height: 1.1;
+    }
   }
   
   /* Luxury Buttons */
@@ -229,9 +250,9 @@
     backdrop-filter: blur(10px);
   }
   
-  /* Luxury Spacing */
+  /* Luxury Spacing - Enhanced Mobile Padding */
   .section-padding {
-    @apply py-24 px-4 sm:px-6 lg:px-8;
+    @apply py-16 px-6 sm:py-20 sm:px-8 lg:py-24 lg:px-8;
   }
   
   .container-luxury {

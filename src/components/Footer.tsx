@@ -19,17 +19,17 @@ export default function Footer() {
       <div className="absolute inset-0 bg-gray-800"></div>
       
       <div className="max-w-6xl mx-auto px-6 py-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+        <div className="flex flex-col lg:flex-row justify-between items-start space-y-6 lg:space-y-0">
           {/* Brand */}
-          <div className="flex-1">
-            <h3 className="text-lg font-bold text-white mb-1">Premantura Apartments</h3>
-            <p className="text-gray-200 text-sm max-w-xs">
+          <div className="flex-1 max-w-sm">
+            <h3 className="text-lg font-bold text-white mb-2">Premantura Apartments</h3>
+            <p className="text-gray-200 text-sm leading-relaxed">
               {t.footer.description}
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="flex space-x-8">
+          <div className="flex flex-wrap gap-4 lg:gap-8 lg:justify-center">
             {[
               { label: t.nav.home, section: 'hero' },
               { label: t.nav.features, section: 'highlights' },
@@ -39,7 +39,7 @@ export default function Footer() {
               <button
                 key={index}
                 onClick={() => scrollToSection(item.section)}
-                className="text-gray-200 hover:text-white transition-colors duration-200 text-sm font-medium"
+                className="text-gray-200 hover:text-white transition-colors duration-200 text-sm font-medium whitespace-nowrap"
               >
                 {item.label}
               </button>
@@ -47,11 +47,11 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="flex-1 text-right">
-            <div className="space-y-1">
+          <div className="flex-1 max-w-sm lg:text-right">
+            <div className="space-y-2">
               <p className="text-gray-200 text-sm font-medium">+385 99 685 9649</p>
               <p className="text-gray-200 text-sm font-medium">+49 176 144 33333</p>
-              <p className="text-gray-200 text-sm">info.kuhne.service@gmail.com</p>
+              <p className="text-gray-200 text-sm word-break">info.kuhne.service@gmail.com</p>
             </div>
           </div>
         </div>

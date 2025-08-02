@@ -49,7 +49,7 @@ export default function LocationSection() {
             </div>
 
             {/* Headline */}
-            <h2 className="luxury-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
+            <h2 className="luxury-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-6">
               {t.locationSection.title}
               <span className="block text-luxury-teal">
                 {t.locationSection.subtitle}
@@ -57,7 +57,7 @@ export default function LocationSection() {
             </h2>
             
             {/* Elegant Description */}
-            <p className="luxury-text text-xl text-muted-foreground mb-10 leading-relaxed">
+            <p className="luxury-text text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed">
               {t.locationSection.description}
             </p>
             

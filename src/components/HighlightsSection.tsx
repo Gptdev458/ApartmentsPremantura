@@ -56,13 +56,13 @@ export default function HighlightsSection() {
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 mb-6">
             <span className="text-primary font-semibold tracking-wide uppercase text-sm">{t.highlights.badge}</span>
           </div>
-          <h2 className="luxury-heading text-4xl sm:text-5xl lg:text-6xl text-primary mb-6">
+          <h2 className="luxury-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary mb-6">
             {t.highlights.title}
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-400">
               {t.highlights.subtitle}
             </span>
           </h2>
-          <p className="luxury-text text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="luxury-text text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             {t.highlights.description}
           </p>
         </div>
